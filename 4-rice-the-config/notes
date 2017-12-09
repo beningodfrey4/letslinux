@@ -1,0 +1,14 @@
+    ☐ i3ass gh page https://github.com/budRich/i3ass
+    ☐ thunar help page https://docs.xfce.org/xfce/thunar/hidden-settings
+    ☐ i3user guide  https://i3wm.org/docs/userguide.html#command_chaining
+    https://budrich.github.io/blog/i3_setup/
+    focus_follows_mouse no
+    workspace_auto_back_and_forth no
+    set $exefmb i3run -i fmB -e '\
+    xfconf-query --channel thunar --property /last-view --set ThunarDetailsView \
+    && xfconf-query --channel thunar --property /last-view --set ThunarIconView \
+    && xfconf-query --channel thunar --property /last-show-hidden --set false \
+    && xfconf-query --channel thunar --property /last-icon-view-zoom-level --set THUNAR_ZOOM_LEVEL_SMALL \
+    && Thunar & xdotool set_window --classname "fmB" `i3get -i Thunar -r d -y`'
+
+    thunar & xdotool search --sync --classname thunar set_window --classname "fmB"
