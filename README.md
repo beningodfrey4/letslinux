@@ -2,6 +2,9 @@ In this repository I collect files and notes related to my youtube series *Let's
 
 ----------------
 
+# Let's Linux #008: i3wm extreme size mode
+https://youtu.be/FF_xz1QF7t4
+
 # Let's Linux #007: i3 rename instances
 https://youtu.be/9ZJLMid348M  
 
