@@ -1,0 +1,34 @@
+#!/bin/bash
+
+clipboarder(){
+  echo -n "%{A3:echo -n '$1' | xclip -selection clipboard:}$1%{A}"
+}
+
+mode=$(i3var get pbtitlemode)
+
+if [[ $1 = switch ]]; then
+  
+  if [[ $mode = advanced ]]; then
+    i3var set pbtitlemode normal
+    mode=normal
+  else
+    i3var set pbtitlemode advanced
+    mode=advanced
+  fi
+
+fi
+
+if [[ $mode = advanced ]]; then
+  awi=$(i3get -r i)
+  awc=$(i3get -r c)
+  output="$(clipboarder $awc)  ---   $(clipboarder $awi)"
+else
+  awt=$(i3get -r t)
+  output="$(clipboarder "$awt")"
+fi
+
+# echo "%{B#FF00FF}%{F#222222}$awt%{B-}%{F-}"
+echo "%{A1:polybar-msg hook titlehook 2:}${output//\"/}%{A}"
+# echo "$awi --- $awc"
+
+# polybar-msg hook titlehook 2
