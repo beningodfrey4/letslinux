@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clipboarder(){
-  echo -n "%{A3:echo -n '$1' | xclip -selection clipboard:}$1%{A}"
+  echo "%{A3:echo '$1' | xclip -selection clipboard:}$1%{A}"
 }
 
 mode=$(i3var get pbtitlemode)
@@ -19,16 +19,20 @@ if [[ $1 = switch ]]; then
 fi
 
 if [[ $mode = advanced ]]; then
-  awi=$(i3get -r i)
   awc=$(i3get -r c)
-  output="$(clipboarder $awc)  ---   $(clipboarder $awi)"
+  awi=$(i3get -r i)
+  output="$(clipboarder "$awc")   ---    $(clipboarder "$awi")"
 else
   awt=$(i3get -r t)
   output="$(clipboarder "$awt")"
 fi
 
-# echo "%{B#FF00FF}%{F#222222}$awt%{B-}%{F-}"
-echo "%{A1:polybar-msg hook titlehook 2:}${output//\"/}%{A}"
-# echo "$awi --- $awc"
 
-# polybar-msg hook titlehook 2
+
+# echo "%{B#00FF00}%{F#FF00FF}string%{F-} anything%{B-}"
+
+
+# echo "$awt"
+
+# polybar-msg hook MODULENAME HOOKNUMBER
+echo "%{A1:polybar-msg hook titlehook 3:}${output//\"/}%{A}"

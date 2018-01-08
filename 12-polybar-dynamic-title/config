@@ -47,8 +47,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = date bspwm i3
-modules-center = titlehook 
-modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature  powermenu
+modules-center = titlehook
+modules-right = filesystem xbacklight volume xkeyboard memory cpu battery temperature  powermenu
 
 tray-position = right
 tray-padding = 2
@@ -86,8 +86,8 @@ exec = displaytitle
 [module/titlehook]
 type = custom/ipc
 hook-0 = displaytitle
-hook-1 = displaytitle switch
-hook-2 = echo hook3
+hook-1 = displaytitle
+hook-2 = displaytitle switch
 initial = 1
 ;click-left = polybar-msg hook titlehook 2
 ;click-right = polybar-msg hook titlehook 3

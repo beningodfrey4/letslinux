@@ -13,7 +13,7 @@ def windownotify(i3, event):
 
 
     if event.change in "focus" "title":
-        call('polybar-msg hook titlehook 1'.split(' '))
+        call('polybar-msg hook titlehook 2'.split(' '))
 
         # print(event.container.fullscreen_mode)
 
