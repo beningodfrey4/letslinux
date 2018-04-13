@@ -17,10 +17,6 @@
  ░░░░░░░░  ░░░░░░                                                        
 ```
 
-# urxvt_reload
-
-https://youtu.be/37jo_x6bXBk
-
 
 
 to start a urxvt daemon process use this command:  

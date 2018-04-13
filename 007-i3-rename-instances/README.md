@@ -17,7 +17,3 @@
 ░░░   ░░ ░░░░░░     ░░   ░░░░░░░░ ░░░   ░░  ░░░░░   ░░░░░░ ░░░░░░          
 ```
 
-# i3_rename_instances
-
-https://youtu.be/9ZJLMid348M
-

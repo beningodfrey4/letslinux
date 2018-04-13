@@ -17,7 +17,3 @@
 ░░░░░░  ░░ ░░░░░░  ░░░░░░   ░░░  ░░  ░░  ░░░░░░   ░░░░░░  ░░░░░░            
 ```
 
-# i3_extreme_size_mode
-
-https://youtu.be/FF_xz1QF7t4
-

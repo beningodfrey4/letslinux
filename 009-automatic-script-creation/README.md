@@ -25,7 +25,3 @@
    ░░  ░░  ░░░░░░  ░░░   ░░                                                     
 ```
 
-# automatic_script_creation
-
-https://youtu.be/QGUmMtEnIkI
-
