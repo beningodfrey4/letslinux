@@ -1,0 +1,19 @@
+#!/bin/bash
+
+while getopts :c:i: option; do
+  case "${option}" in
+
+    c) search=${OPTARG} target=class ;;
+    i) search=${OPTARG} target=instance ;;
+
+  esac
+done
+
+windowList=$(i3viswiz -p ${target:0:1} | tail +3 | awk '{print $NF}')
+
+for w in ${windowList}; do
+  [[ $w = $search ]] \
+    && i3-msg -q [$target=$w] focus && exit
+done
+
+exit 1
