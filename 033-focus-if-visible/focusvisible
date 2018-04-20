@@ -2,18 +2,14 @@
 
 while getopts :c:i: option; do
   case "${option}" in
-
-    c) search=${OPTARG} target=class ;;
-    i) search=${OPTARG} target=instance ;;
-
+    c|i ) target=$option arg=${OPTARG};;
   esac
 done
 
-windowList=$(i3viswiz -p ${target:0:1} | tail +3 | awk '{print $NF}')
+conid=$(getvisible -$target "$arg")
 
-for w in ${windowList}; do
-  [[ $w = $search ]] \
-    && i3-msg -q [$target=$w] focus && exit
-done
+[[ -z $conid ]] && exit 1
 
-exit 1
+i3-msg -q [con_id=$conid] focus
+
+
